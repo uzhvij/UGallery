@@ -14,6 +14,10 @@ class PhotoInfoList{
     }
   }
 
+  static getImageId(int position){
+    return list[position].id;
+  }
+
   static getRegularImageUrl(int position){
     return list[position].regularSize;
   }
