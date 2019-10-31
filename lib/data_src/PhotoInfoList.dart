@@ -22,6 +22,10 @@ class PhotoInfoList{
     return list[position].smallSize;
   }
 
+  static String getDownloadRequestUrl(int position) {
+    return list[position].downloadLocation;
+  }
+
   static getElement(int position){
     return list.elementAt(position);
   }

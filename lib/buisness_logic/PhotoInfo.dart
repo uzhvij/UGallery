@@ -3,16 +3,16 @@ class PhotoInfo {
   final String userName;
   final String smallSize;
   final String regularSize;
-  final String fullSize;
+  final String downloadLocation;
 
-  PhotoInfo._({this.name, this.userName, this.smallSize, this.fullSize, this.regularSize});
+  PhotoInfo._({this.name, this.userName, this.smallSize, this.downloadLocation, this.regularSize});
 
   factory PhotoInfo.fromJson(Map<String, dynamic> json) {
     return new PhotoInfo._(
         name: json['user']['name'],
         userName: json['user']['username'],
         smallSize: json['urls']['small'],
-        fullSize: json['urls']['full'],
+        downloadLocation: json['links']['download_location'],
         regularSize: json['urls']['regular']);
   }
 }
