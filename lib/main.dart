@@ -35,7 +35,7 @@ class _MainPageState extends State<MainPage> {
   ScrollController scrollController;
   Ads ads;
 
-  //ToDo add real app id & switch testing to false
+  //ToDo add real app id & switch testing to false!
   @override
   void initState() {
     super.initState();
