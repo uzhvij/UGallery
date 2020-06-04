@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gallery/buisness_logic/PhotoInfo.dart';
+import 'package:flutter_gallery/data_src/DataUI.dart';
 import 'package:flutter_gallery/data_src/PhotoInfoList.dart';
 import 'LinkTextSpan.dart';
 import '../data_src/DataLinks.dart' as links;
@@ -16,16 +17,16 @@ class DataRowBuilder {
         children: [
       Text(
         'Photo by',
-        style: TextStyle(fontSize: 16.0, fontStyle: FontStyle.italic),
+        style: TextStyle(fontSize: DataUI.getFontSize(), fontStyle: FontStyle.italic),
         textAlign: TextAlign.center,
       ),
 
       RichText(
         text: LinkTextSpan(
-            style: Theme.of(context).textTheme.body1.copyWith(
+            style: Theme.of(context).textTheme.bodyText1.copyWith(
                   color: Colors.black,
                   decoration: TextDecoration.underline,
-                  fontSize: 16.0,
+                  fontSize: DataUI.getFontSize(),
                 ),
             text: makeOptimalLengthUserName(photoInfo.name, place),
             url: makeUserUri()),
@@ -33,7 +34,7 @@ class DataRowBuilder {
       ),
       Text(
         'on',
-        style: TextStyle(fontSize: 16.0, fontStyle: FontStyle.italic),
+        style: TextStyle(fontSize: DataUI.getFontSize(), fontStyle: FontStyle.italic),
         textAlign: TextAlign.center,
       ),
       RichText(
@@ -41,7 +42,7 @@ class DataRowBuilder {
             style: Theme.of(context).textTheme.body1.copyWith(
                   color: Colors.black26,
                   decoration: TextDecoration.underline,
-                  fontSize: 15.0,
+                  fontSize: DataUI.getFontSize(),
                 ),
             text: links.site,
             url: links.uriSite),
@@ -63,7 +64,7 @@ class DataRowBuilder {
         if (name.length >= 18) optimalName = name.substring(0, 15) + "...";
         break;
       case PlaceTo.APP_BAR:
-        if (name.length >= 15) optimalName = name.substring(0, 12) + "...";
+        if (name.length >= 15) optimalName = name.substring(0, 9) + "...";
         break;
     }
     return optimalName;
